@@ -1,0 +1,111 @@
+/* News studio styles */
+.news-studio {
+    width: 100%;
+    height: 450px;
+    background-image: url('../studio_background.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.news-desk {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background-image: url('../news_desk.png');
+    background-size: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+}
+
+.anchor {
+    position: absolute;
+    bottom: 120px;
+    width: 200px;
+    height: 250px;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+}
+
+.anchor.active {
+    opacity: 1;
+}
+
+#anchor1, #feed-anchor1 {
+    left: 150px;
+}
+
+#anchor2, #feed-anchor2 {
+    right: 150px;
+}
+
+.anchor-name {
+    position: absolute;
+    bottom: 85px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#anchor1-name, #feed-anchor1-name {
+    left: 180px;
+}
+
+#anchor2-name, #feed-anchor2-name {
+    right: 180px;
+}
+
+.subtitle {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px 0;
+    font-size: 18px;
+    min-height: 50px;
+}
+
+.breaking-news {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background-color: rgba(204, 0, 0, 0.9);
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+/* Talking animations */
+@keyframes talking-animation {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(1px); }
+    75% { transform: translateY(-1px); }
+}
+
+@keyframes subtle-head-nod {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.5deg); }
+    75% { transform: rotate(-0.5deg); }
+}
+
+.anchor.talking {
+    animation: talking-animation 0.3s infinite, subtle-head-nod 2s infinite;
+    transform-origin: center bottom;
+}

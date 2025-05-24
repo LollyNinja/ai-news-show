@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Show</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI News Network</h1>
+        
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+            <button id="tab-studio" class="tab-button active">Broadcast Studio</button>
+            <button id="tab-feed" class="tab-button">News Feed</button>
+        </div>
+        
+        <!-- Studio Tab Content -->
+        <div id="studio-tab" class="tab-content active">
+            <div class="news-studio">
+                <!-- AI System Status Indicator -->
+                <div class="ai-system-status">
+                    <div class="system-status-indicator status-optimal"></div>
+                    <span class="system-status-text">AI System: Optimal</span>
+                </div>
+                
+                <!-- On Air Countdown Overlay -->
+                <div class="on-air-overlay" id="on-air-overlay">
+                    <div class="on-air-sign">ON AIR</div>
+                    <div class="countdown-container">
+                        <div class="countdown-label">BROADCAST STARTS IN</div>
+                        <div class="countdown-time" id="countdown-timer">00:00</div>
+                    </div>
+                    <div class="preparing-label" id="preparing-label">Preparing your news broadcast...</div>
+                    <div class="recording-indicator">
+                        <div class="recording-dot"></div>
+                        <div class="recording-text">RECORDING</div>
+                    </div>
+                </div>
+                
+                <!-- Intro Animation Overlay -->
+                <div class="intro-overlay" id="intro-overlay">
+                    <div class="intro-glow"></div>
+                    <img src="news_logo.png" alt="News Logo" class="intro-logo">
+                    <div class="intro-line"></div>
+                    <div class="intro-text">AI NEWS NETWORK</div>
+                    <div class="intro-line"></div>
+                </div>
+                
+                <!-- Outro Animation Overlay -->
+                <div class="outro-overlay" id="outro-overlay">
+                    <div class="outro-glow"></div>
+                    <img src="news_logo.png" alt="News Logo" class="outro-logo">
+                    <div class="outro-line"></div>
+                    <div class="outro-text">THANKS FOR WATCHING</div>
+                    <div class="outro-line"></div>
+                    <div class="outro-subtext">AI NEWS NETWORK</div>
+                </div>
+                
+                <img src="news_logo.png" alt="News Logo" class="logo">
+                <div class="breaking-news">BREAKING NEWS</div>
+                
+                <img src="anchor1.png" alt="News Anchor 1" class="anchor" id="anchor1">
+                <div class="anchor-name" id="anchor1-name">James Miller</div>
+                
+                <img src="anchor2.png" alt="News Anchor 2" class="anchor" id="anchor2">
+                <div class="anchor-name" id="anchor2-name">Sarah Johnson</div>
+                
+                <div class="news-desk"></div>
+                <div class="subtitle" id="subtitle">Welcome to AI News Network</div>
+            </div>
+            
+            <div class="controls">
+                <div class="input-row">
+                    <input type="text" id="news-topic" placeholder="Enter a news topic or headline...">
+                    <button id="start-news">Start Broadcast</button>
+                    <button id="queue-news" class="queue-button">Queue Broadcast</button>
+                </div>
+                
+                <div class="queue-info" id="queue-info">
+                    <div class="queue-label">Broadcast Queue</div>
+                    <div class="queued-topic" id="queued-topic">None</div>
+                    <div class="queue-status" id="queue-status"></div>
+                    <div class="queue-list" id="queue-list">
+                        <!-- Queue items will be rendered here -->
+                    </div>
+                </div>
+                
+                <button id="toggle-settings" class="settings-toggle">Show Settings</button>
+                
+                <div class="settings-panel" id="settings-panel">
+                    <div class="setting-item">
+                        <label class="setting-label" for="lines-per-anchor">Lines per anchor:</label>
+                        <div style="display: flex; align-items: center;">
+                            <input type="range" id="lines-per-anchor" min="1" max="5" value="3" step="1">
+                            <span class="range-value" id="lines-value">3</span>
+                        </div>
+                        <div class="setting-note">Controls how many times each anchor will speak</div>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label class="setting-label" for="broadcast-tone">Broadcast tone:</label>
+                        <select id="broadcast-tone">
+                            <option value="serious">Serious</option>
+                            <option value="satire">Satirical</option>
+                            <option value="dramatic">Dramatic</option>
+                            <option value="casual">Casual</option>
+                            <option value="optimistic">Optimistic</option>
+                        </select>
+                        <div class="setting-note">Changes the tone/mood of how anchors present the news</div>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label class="setting-label">Anchor Personalities:</label>
+                        <div class="personality-selectors">
+                            <div class="anchor-personality">
+                                <span class="personality-title">James Miller</span>
+                                <select id="anchor1-personality">
+                                    <option value="professional">Professional</option>
+                                    <option value="flirtatious">Flirtatious</option>
+                                    <option value="argumentative">Argumentative</option>
+                                    <option value="nervous">Nervous</option>
+                                    <option value="enthusiastic">Enthusiastic</option>
+                                    <option value="skeptical">Skeptical</option>
+                                </select>
+                                <div class="personality-description">How James behaves on air</div>
+                            </div>
+                            
+                            <div class="anchor-personality">
+                                <span class="personality-title">Sarah Johnson</span>
+                                <select id="anchor2-personality">
+                                    <option value="professional">Professional</option>
+                                    <option value="flirtatious">Flirtatious</option>
+                                    <option value="argumentative">Argumentative</option>
+                                    <option value="nervous">Nervous</option>
+                                    <option value="enthusiastic">Enthusiastic</option>
+                                    <option value="skeptical">Skeptical</option>
+                                </select>
+                                <div class="personality-description">How Sarah behaves on air</div>
+                            </div>
+                        </div>
+                        <div class="setting-note">Defines how anchors interact with each other</div>
+                    </div>
+                    
+                    <div class="broadcast-visibility">
+                        <label class="visibility-label">Broadcast Visibility:</label>
+                        <div class="visibility-options">
+                            <label><input type="radio" name="visibility" value="public"> Public</label>
+                            <label><input type="radio" name="visibility" value="private" checked> Private</label>
+                        </div>
+                        <div class="visibility-note">Public broadcasts appear in everyone's feed. Private are only visible to you.</div>
+                    </div>
+                    
+                    <div class="setting-warning">
+                        Note: Increasing the number of lines will create a longer broadcast but will also take more time to load the voice audio.
+                    </div>
+                </div>
+                
+                <div class="progress-container" id="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="status" id="status">Enter a topic and click 'Start Broadcast'</div>
+                <div class="loading" id="loading">
+                    <div class="dot-flashing"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feed Tab Content -->
+        <div id="feed-tab" class="tab-content">
+            <!-- Feed Subtabs -->
+            <div class="feed-subtabs">
+                <button id="my-broadcasts-tab" class="feed-subtab active">My Broadcasts</button>
+                <button id="public-broadcasts-tab" class="feed-subtab">Public Broadcasts</button>
+            </div>
+            
+            <div class="feed-controls">
+                <div class="feed-filters">
+                    <span id="feed-view-label">Currently viewing: My Broadcasts</span>
+                </div>
+                <button id="refresh-feed">Refresh Feed</button>
+            </div>
+            
+            <div class="feed-container" id="feed-container">
+                <!-- Feed items will be loaded here -->
+                <div class="feed-loading">
+                    <div class="dot-flashing"></div>
+                    <div>Loading news feed...</div>
+                </div>
+            </div>
+            
+            <!-- Feed News Studio for playback -->
+            <div class="feed-news-studio-container" id="feed-news-studio-container">
+                <div class="news-studio feed-news-studio">
+                    <!-- AI System Status Indicator -->
+                    <div class="ai-system-status">
+                        <div class="system-status-indicator status-optimal"></div>
+                        <span class="system-status-text">AI System: Optimal</span>
+                    </div>
+                    
+                    <!-- Intro Animation Overlay -->
+                    <div class="intro-overlay" id="feed-intro-overlay">
+                        <div class="intro-glow"></div>
+                        <img src="news_logo.png" alt="News Logo" class="intro-logo">
+                        <div class="intro-line"></div>
+                        <div class="intro-text">AI NEWS NETWORK</div>
+                        <div class="intro-line"></div>
+                    </div>
+                    
+                    <!-- Outro Animation Overlay -->
+                    <div class="outro-overlay" id="feed-outro-overlay">
+                        <div class="outro-glow"></div>
+                        <img src="news_logo.png" alt="News Logo" class="outro-logo">
+                        <div class="outro-line"></div>
+                        <div class="outro-text">THANKS FOR WATCHING</div>
+                        <div class="outro-line"></div>
+                        <div class="outro-subtext">AI NEWS NETWORK</div>
+                    </div>
+                    
+                    <img src="news_logo.png" alt="News Logo" class="logo">
+                    <div class="breaking-news" id="feed-breaking-news">BREAKING NEWS</div>
+                    
+                    <img src="anchor1.png" alt="News Anchor 1" class="anchor" id="feed-anchor1">
+                    <div class="anchor-name" id="feed-anchor1-name">James Miller</div>
+                    
+                    <img src="anchor2.png" alt="News Anchor 2" class="anchor" id="feed-anchor2">
+                    <div class="anchor-name" id="feed-anchor2-name">Sarah Johnson</div>
+                    
+                    <div class="news-desk"></div>
+                    <div class="subtitle" id="feed-subtitle">Welcome to AI News Network</div>
+                    
+                    <button id="feed-close-studio" class="feed-close-button">Close Broadcast</button>
+                </div>
+            </div>
+            
+            <div class="feed-status" id="feed-status"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

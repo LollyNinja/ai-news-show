@@ -1,0 +1,495 @@
+/* Feed Styles */
+.feed-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.feed-filters {
+    display: flex;
+    gap: 15px;
+}
+
+/* Feed Subtabs */
+.feed-subtabs {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.feed-subtab {
+    flex: 1;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #666;
+    transition: background-color 0.3s;
+}
+
+.feed-subtab:hover {
+    background-color: #e5e5e5;
+}
+
+.feed-subtab.active {
+    background-color: #cc0000;
+    color: white;
+}
+
+#feed-view-label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Feed items */
+.feed-container {
+    width: 100%;
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.feed-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    color: #666;
+}
+
+.feed-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feed-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feed-item:last-child {
+    border-bottom: none;
+}
+
+.feed-item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.feed-item-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+.feed-item-time {
+    color: #888;
+    font-size: 14px;
+}
+
+.feed-item-creator {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.feed-creator-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.feed-item-meta {
+    display: flex;
+    align-items: center;
+    color: #888;
+    margin-bottom: 10px;
+    font-size: 14px;
+    gap: 15px;
+}
+
+.feed-visibility-tag {
+    background-color: #eee;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.feed-tag-public {
+    background-color: #e3f2fd;
+    color: #0277bd;
+}
+
+.feed-tag-private {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
+
+.feed-item-play-button {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.feed-item-play-button:hover {
+    background-color: #aa0000;
+}
+
+.feed-item-play-button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+.feed-item-play-button.loading {
+    background-color: #ff6600;
+    position: relative;
+    overflow: hidden;
+}
+
+.feed-item-play-button.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    animation: button-loading-pulse 1.5s infinite;
+}
+
+@keyframes button-loading-pulse {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.feed-play-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.feed-item-details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.feed-status {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    min-height: 20px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.feed-no-items {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-style: italic;
+}
+
+.feed-new-tag {
+    background-color: #cc0000;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 10px;
+    animation: pulse 2s infinite;
+}
+
+.feed-item-new {
+    animation: slide-in 0.5s ease-out;
+}
+
+/* Broadcast action buttons */
+.feed-item-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.feed-action-button {
+    flex: 1;
+    padding: 8px 0;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.feed-action-share {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.feed-action-share:hover {
+    background-color: #388E3C;
+}
+
+.feed-action-delete {
+    background-color: #F44336;
+    color: white;
+}
+
+.feed-action-delete:hover {
+    background-color: #D32F2F;
+}
+
+.feed-action-shared {
+    background-color: #e8f5e9;
+    color: #388E3C;
+    cursor: default;
+}
+
+.feed-share-icon, .feed-delete-icon {
+    font-size: 16px;
+}
+
+/* Public broadcast indicator */
+.feed-item-shared-by {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+/* Playing state */
+.feed-item.playing {
+    border-left: 5px solid #cc0000;
+    background-color: #fff9f9;
+}
+
+.feed-item-playing-indicator {
+    display: none;
+}
+
+.feed-item.playing .feed-item-playing-indicator {
+    display: inline-flex;
+    align-items: center;
+    color: #cc0000;
+    font-weight: bold;
+    gap: 5px;
+    animation: blink 1s infinite;
+}
+
+.feed-item-play-button.playing {
+    background-color: #666;
+}
+
+.feed-item-play-button.playing:hover {
+    background-color: #555;
+}
+
+/* Feed loading overlay additions */
+.feed-loading-cancel-button {
+    background-color: #F44336;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.feed-loading-cancel-button:hover {
+    background-color: #D32F2F;
+}
+
+/* General broadcast cancellation message */
+.feed-broadcast-cancelled {
+    color: #F44336;
+    font-style: italic;
+    animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Feed Studio styles */
+.feed-news-studio-container {
+    width: 100%;
+    display: none;
+    margin: 20px 0;
+    position: relative;
+}
+
+.feed-news-studio-container.active {
+    display: block;
+}
+
+.feed-news-studio {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.feed-close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(204, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.feed-close-button:hover {
+    background-color: rgba(170, 0, 0, 0.9);
+}
+
+/* When studio is active, hide the feed list */
+.feed-studio-active .feed-container {
+    display: none;
+}
+
+.feed-studio-active .feed-controls {
+    display: none;
+}
+
+.feed-studio-active .feed-news-studio-container {
+    display: block;
+}
+
+/* Loading animation for broadcasts */
+.feed-loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Loading overlay for the feed studio */
+.feed-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    backdrop-filter: blur(3px);
+}
+
+.feed-loading-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.feed-loading-text {
+    color: white;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.feed-loading-progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+.feed-loading-progress-bar {
+    height: 100%;
+    background-color: #cc0000;
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feed-loading-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    animation: progress-pulse 1.5s infinite;
+}
+
+@keyframes progress-pulse {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.feed-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #cc0000;
+    margin: 0 auto;
+    animation: spin 1s ease-in-out infinite;
+}

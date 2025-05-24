@@ -1,0 +1,126 @@
+/* Queue related styles */
+.queue-button {
+    background-color: #005b9f;
+    display: none;
+}
+
+.queue-button:hover {
+    background-color: #004680;
+}
+
+.queue-info {
+    display: none;
+    width: 90%;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 3px solid #005b9f;
+}
+
+.queue-label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.queued-topic {
+    font-style: italic;
+    margin-bottom: 5px;
+    word-break: break-word;
+}
+
+.queue-status {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Queue list styles */
+.queue-list {
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+.queue-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 5px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    position: relative;
+}
+
+.queue-item:hover {
+    background-color: #f9f9f9;
+}
+
+.queue-item-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-preparing {
+    background-color: #ffc107; /* Yellow */
+    animation: blink 1s infinite;
+}
+
+.status-generating {
+    background-color: #ff9800; /* Orange */
+    animation: blink 1s infinite;
+}
+
+.status-loading {
+    background-color: #2196F3; /* Blue */
+    animation: blink 1s infinite;
+}
+
+.status-ready {
+    background-color: #4CAF50; /* Green */
+}
+
+.status-error {
+    background-color: #f44336; /* Red */
+}
+
+.queue-item-position {
+    background-color: #005b9f;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.queue-item-topic {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+}
+
+.queue-item-remove {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.queue-item-remove:hover {
+    background-color: #ffebee;
+    color: #d32f2f;
+}

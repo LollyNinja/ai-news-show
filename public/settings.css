@@ -1,0 +1,102 @@
+/* Settings panel styles */
+.settings-panel {
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.settings-panel.active {
+    display: block;
+}
+
+.settings-toggle {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.settings-toggle:hover {
+    background-color: #e5e5e5;
+}
+
+.setting-item {
+    margin: 10px 0;
+}
+
+.setting-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.setting-note {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.setting-warning {
+    font-size: 13px;
+    color: #cc0000;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #fff0f0;
+    border-radius: 4px;
+    border-left: 3px solid #cc0000;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.range-value {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: white;
+}
+
+/* Personality selector styles */
+.personality-selectors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.anchor-personality {
+    flex: 1;
+    min-width: 150px;
+}
+
+.personality-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.personality-description {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}

@@ -1,0 +1,276 @@
+/* Animation styles */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Intro animation */
+.intro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-logo {
+    width: 0;
+    height: 0;
+    transition: all 1.5s ease-out;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    color: white;
+    font-size: 0;
+    font-weight: bold;
+    text-align: center;
+    transition: all 1.5s ease-out;
+    opacity: 0;
+    text-shadow: 0 0 10px rgba(0, 102, 204, 0.7);
+}
+
+.intro-line {
+    width: 0;
+    height: 3px;
+    background-color: #cc0000;
+    margin: 20px 0;
+    transition: width 1.5s ease-out;
+}
+
+.intro-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.intro-overlay.active .intro-logo {
+    width: 200px;
+    height: auto;
+}
+
+.intro-overlay.active .intro-text {
+    font-size: 36px;
+    opacity: 1;
+}
+
+.intro-overlay.active .intro-line {
+    width: 80%;
+}
+
+.intro-overlay.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.intro-glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,102,204,0.5) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    animation: pulse 2s infinite;
+}
+
+/* Outro animation */
+.outro-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.outro-logo {
+    width: 0;
+    height: 0;
+    transition: all 1.5s ease-out;
+    margin-bottom: 20px;
+}
+
+.outro-text {
+    color: white;
+    font-size: 0;
+    font-weight: bold;
+    text-align: center;
+    transition: all 1.5s ease-out;
+    opacity: 0;
+    text-shadow: 0 0 10px rgba(0, 102, 204, 0.7);
+}
+
+.outro-subtext {
+    color: #cc0000;
+    font-size: 0;
+    font-weight: bold;
+    text-align: center;
+    transition: all 1.5s ease-out;
+    opacity: 0;
+    margin-top: 10px;
+}
+
+.outro-line {
+    width: 0;
+    height: 3px;
+    background-color: #cc0000;
+    margin: 20px 0;
+    transition: width 1.5s ease-out;
+}
+
+.outro-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.outro-overlay.active .outro-logo {
+    width: 200px;
+    height: auto;
+}
+
+.outro-overlay.active .outro-text {
+    font-size: 36px;
+    opacity: 1;
+}
+
+.outro-overlay.active .outro-subtext {
+    font-size: 24px;
+    opacity: 1;
+}
+
+.outro-overlay.active .outro-line {
+    width: 80%;
+}
+
+.outro-overlay.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.outro-glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,102,204,0.5) 0%, rgba(0,0,0,0) 70%);
+    z-index: -1;
+    animation: pulse 2s infinite;
+}
+
+/* On Air Countdown Scene */
+.on-air-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 110;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.on-air-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.on-air-sign {
+    background-color: #cc0000;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.7);
+    animation: pulse 1.5s infinite;
+    border: 2px solid white;
+    letter-spacing: 2px;
+}
+
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.countdown-time {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    min-width: 120px;
+    text-align: center;
+}
+
+.countdown-label {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.preparing-label {
+    font-size: 16px;
+    color: #cccccc;
+    margin-top: 30px;
+    text-align: center;
+    max-width: 80%;
+}
+
+.recording-indicator {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.recording-dot {
+    width: 15px;
+    height: 15px;
+    background-color: #cc0000;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: blink 1s infinite;
+}
+
+.recording-text {
+    color: #cccccc;
+    font-size: 14px;
+}
